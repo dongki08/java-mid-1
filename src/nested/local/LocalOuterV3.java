@@ -1,5 +1,7 @@
 package nested.local;
 
+import java.lang.reflect.Field;
+
 public class LocalOuterV3 {
     private int outInstanceVar = 3;
 
@@ -33,5 +35,9 @@ public class LocalOuterV3 {
 
         //추가
         System.out.println("필드 확인");
+        Field[] fields = printer.getClass().getDeclaredFields();
+        for (Field field : fields) {
+            System.out.println("field = " + field);
+        }
     }
 }
